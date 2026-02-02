@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>LUMIÈRE | Premium ERP</title>
+    <title>LUMIÈRE | White Edition ERP</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,7 +12,7 @@
 
     <div id="app-content">
         <header class="main-header">
-            <div class="nav-brand">LUMIÈRE <span>SYSTEM v5.0</span></div>
+            <div class="nav-brand">LUMIÈRE <span>WHITE EDITION</span></div>
             <nav class="nav-links">
                 <button class="active" onclick="showModule('floor', this)">FLOOR MAP</button>
                 <button onclick="showModule('kitchen', this)">KITCHEN (KDS)</button>
@@ -23,7 +23,7 @@
 
         <main class="viewport">
             <section id="floor-mod" class="module-view">
-                <div class="status-legend">Available Ordering Cooking</div>
+                <div class="status-legend">Available • Ordering • Cooking</div>
                 <div class="grid" id="table-grid"></div>
             </section>
 
@@ -41,11 +41,17 @@
     <div id="drawer">
         <div class="pos-layout">
             <div class="menu-side">
-                <div class="cat-bar" id="cat-bar"></div>
+                <div class="menu-header">
+                    <h3>Menu Categories</h3>
+                    <div class="cat-bar" id="cat-bar"></div>
+                </div>
                 <div id="menu-items" class="menu-items-grid"></div>
             </div>
             <div class="check-side">
-                <h2 id="table-title">TABLE</h2>
+                <div class="drawer-header">
+                    <h2 id="table-title">TABLE</h2>
+                    <button class="close-x" onclick="window.closeDrawer()">×</button>
+                </div>
                 <div id="cart-list" class="cart-items"></div>
                 <div class="bill-footer">
                     <div class="total-line">TOTAL: <span id="cart-total">Rs. 0</span></div>
