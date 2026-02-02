@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>LUMIÈRE | Professional ERP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="brand">LUMIÈRE <span>SYSTEMS</span></div>
+        <nav class="nav-links">
+            <button class="active" onclick="showMod('floor', this)">FLOOR MAP</button>
+            <button onclick="showMod('kitchen', this)">KITCHEN (KDS)</button>
+            <button onclick="showMod('billing', this)">SETTLEMENT</button>
+        </nav>
+        <div class="header-tools">
+            <span id="sys-clock">00:00:00</span>
+            <button class="sync-btn" onclick="location.reload()">SYNC</button>
+        </div>
+    </header>
 
+    <main class="viewport">
+        <section id="floor-mod" class="module">
+            <div class="stats-bar">
+                <div class="stat"><span class="dot available"></span> Available</div>
+                <div class="stat"><span class="dot ordering"></span> Ordering</div>
+                <div class="stat"><span class="dot cooking"></span> Cooking</div>
+                <div class="stat"><span class="dot served"></span> Active</div>
+            </div>
+            <div class="grid" id="table-grid"></div>
+        </section>
+
+        <section id="kitchen-mod" class="module" style="display:none">
+            <div id="kds-list" class="kds-container"></div>
+        </section>
+
+        <section id="billing-mod" class="module" style="display:none">
+            <div class="billing-wrapper">
+                <h3>Active Receivables</h3>
+                <div id="bill-grid" class="bill-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="overlay" onclick="closeDrawer()"></div>
+    <div id="drawer">
+        <div class="drawer-layout">
+            <div class="menu-pane">
+                <div class="cat-bar" id="cat-bar"></div>
+                <div id="menu-items" class="item-grid"></div>
+            </div>
+            <div class="cart-pane">
+                <div class="cart-header">
+                    <h2 id="active-table-title">TABLE 00</h2>
+                    <button class="close-x" onclick="closeDrawer()">×</button>
+                </div>
+                <div id="cart-list" class="cart-items"></div>
+                <div class="cart-summary">
+                    <div class="summary-line"><span>Subtotal</span> <span id="sub-total">Rs. 0</span></div>
+                    <div class="summary-line total"><span>GRAND TOTAL</span> <span id="grand-total">Rs. 0</span></div>
+                    <button class="fire-btn" onclick="fireOrder()">FIRE TO KITCHEN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
