@@ -1,0 +1,22 @@
+:root { --gold: #d4af37; --bg: #050505; --card: #121212; --border: #222; }
+body { background: var(--bg); color: #fff; font-family: 'Montserrat', sans-serif; margin: 0; overflow: hidden; }
+
+.main-header { display: flex; justify-content: space-between; align-items: center; padding: 0 20px; height: 70px; background: #000; border-bottom: 1px solid var(--border); }
+.nav-brand { color: var(--gold); font-weight: 600; letter-spacing: 2px; }
+.nav-links button { background: none; border: none; color: #666; padding: 25px 10px; cursor: pointer; font-size: 11px; font-weight: 600; }
+.nav-links button.active { color: var(--gold); box-shadow: inset 0 -2px 0 var(--gold); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(75px, 1fr)); gap: 10px; padding: 20px; }
+.table-card { aspect-ratio: 1; background: var(--card); border: 1px solid var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.table-card.ordering { border-color: var(--gold); color: var(--gold); }
+.table-card.cooking { border-color: #ff4444; background: #1a0808; color: #ff4444; }
+
+#drawer { position: fixed; right: -100%; top: 0; width: 400px; height: 100%; background: #000; transition: 0.4s; z-index: 1000; border-left: 1px solid var(--gold); padding: 20px; box-sizing: border-box; }
+#drawer.active { right: 0; }
+.cart-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #1a1a1a; }
+.qty-control { display: flex; align-items: center; gap: 10px; }
+.qty-control button { background: var(--gold); border: none; width: 28px; height: 28px; border-radius: 4px; font-weight: bold; cursor: pointer; }
+
+.kds-flex { display: flex; gap: 15px; padding: 20px; overflow-x: auto; }
+.kds-card { background: #111; border-top: 4px solid #ff4444; padding: 15px; min-width: 200px; border-radius: 4px; }
+.done-btn { width: 100%; background: #00c851; color: white; border: none; padding: 10px; margin-top: 15px; border-radius: 4px; font-weight: bold; cursor: pointer; }
